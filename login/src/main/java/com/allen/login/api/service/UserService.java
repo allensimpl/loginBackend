@@ -9,6 +9,5 @@ import java.util.List;
 @Service
 public interface UserService {
     public List<User> getAll();
-
     public User addUser(UserDto user);
 }

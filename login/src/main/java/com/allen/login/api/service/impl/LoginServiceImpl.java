@@ -18,10 +18,10 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String login(UserDto userDto) throws Exception {
-        if(repository.findByName(userDto.getName())==null){
+        User user = repository.findByName(userDto.getName());
+        if(user==null){
             throw new Exception("Name not found!");
         }
-        User user = repository.findByName(userDto.getName());
         if(encoder.matches(userDto.getPassword(),user.getPassword())){
             return jwtTokenUtil.tokenGenerator(user);
         }
