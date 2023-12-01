@@ -30,7 +30,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         }
         if(header!=null && header.startsWith("Bearer ")){
 //            authToken =
-
+            authToken =
         }
     }
 }
